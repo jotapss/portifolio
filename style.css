@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #7d9b76;
+    --light-green: #a4b89b;
+    --dark-green: #5f7c59;
+    --primary-beige: #d4c5b0;
+    --light-beige: #e6dcc8;
+    --bg-offwhite: #faf8f5;
+    --bg-light: #ffffff;
+    --text-dark: #3a3530;
+    --text-gray: #6b6560;
+}
+
+body {
+    font-family: 'nunito';
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-offwhite);
+}
+
+
+nav {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: var(--primary-green);
+}
+
+
+section {
+    min-height: 100vh;
+    padding: 6rem 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+#home {
+    background: linear-gradient(135deg, var(--bg-offwhite) 0%, var(--light-beige) 100%);
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.home-text h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.home-text p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.home-text .highlight {
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+.home-image {
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-beige), var(--primary-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(125, 155, 118, 0.25);
+}
+
+
+#projetos {
+    background-color: var(--bg-offwhite);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, var(--primary-beige), var(--light-green));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 20px rgba(212, 197, 176, 0.4);
+}
+
+.project-info h3 {
+    color: var(--dark-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.project-info .tech {
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+
+#sobre {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--bg-offwhite) 100%);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-green);
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+
+#servicos {
+    background-color: var(--bg-offwhite);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--bg-light);
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+    border-top: 3px solid var(--primary-beige);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--primary-green);
+    box-shadow: 0 10px 30px rgba(125, 155, 118, 0.2);
+}
+
+.service-card h3 {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+
+#contato {
+    background: linear-gradient(135deg, var(--bg-offwhite) 0%, var(--light-beige) 100%);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+    background-color: var(--light-beige);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bg-light);
+}
+
+.contact-info h3 {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.contact-info p {
+    color: var(--text-gray);
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home-content,
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+}
